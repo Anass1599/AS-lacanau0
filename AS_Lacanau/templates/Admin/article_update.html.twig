@@ -2,7 +2,7 @@
 restituer le contenu du bloc parent (base.html.twig #}
 {% extends "Admin/base.html.twig" %}
 
-{% block metatitle %}{{ parent()}}Article{% endblock %}
+{% block metatitle %}{{ parent()}}MODIFIER UN ARTICLE{% endblock %}
 
 {% block main %}
 
@@ -11,15 +11,15 @@ restituer le contenu du bloc parent (base.html.twig #}
             <div class="img">
                 <a href=""><img class="article_img" src="{{ asset('uploads/cover/'~article.coverFilenam)  }}"></a>
             </div>
-            <h5>{{ article.title }}</h5>
-            <h5>{{ article.publishdAt|date("m/d/Y") }}</h5>
+            <h4>{{ article.title }}</h4>
+            <h4>{{ article.publishdAt|date("m/d/Y") }}</h4>
         </article>
     </section>
 
     {{ form_start(form) }}
 
         <div class="form-style-9">
-            <h2>AJOUTER UN ARTICLE</h2>
+            <h2>MODIFIER UN ARTICLE</h2>
 
             {{ form_widget(form.title, {'attr': {'placeholder': 'Tapez le Titre du livre'}}) }}
 

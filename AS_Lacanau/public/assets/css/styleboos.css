@@ -83,6 +83,8 @@ article {
     margin: 4rem;
     text-align: center;
     background: #EEEEEE;
+    box-shadow: 0px 0px 3px black;
+
 }
 .img {
     width: 100%;

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\ArticleRepository;
+use App\Repository\PlayersRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -40,6 +41,15 @@ class HomeUserController extends AbstractController
     {
         $article = $articleRepository->find($id);
         return $this->render("User/article.html.twig", ["article" => $article]);
+    }
+
+    /**
+     * @Route("/user/seniors", name="user_seniors")
+     */
+    public function seniors(PlayersRepository $playersRepository)
+    {
+        $players = $playersRepository->findAll();
+        return $this->render("User/seniors.html.twig", ["players" => $players]);
     }
 
 

@@ -1,0 +1,28 @@
+{# je utilise l'héritage de twig pour
+restituer le contenu du bloc parent (base.html.twig #}
+{% extends "User/base.html.twig" %}
+
+{% block metatitle %}{{ parent()}}Seniors{% endblock %}
+
+{% block main %}
+
+    <section>
+        <h2>SENIORS</h2>
+        <div class="photo_img">
+            <img class="article_img" src="{{ asset('assets/img/enzr.jpg')  }}">
+        </div>
+        <h4>Les joueurs</h4>
+        <div class="articles">
+            {# avec la methode path je recupere les variables dens mon tableau apartir de mon homeContraller. #}
+            {% for player in players %}
+                <article>
+                    <div class="img">
+                        <a href=""><img class="article_img" src="{{ asset('assets/img/players.png')  }}"></a>
+                    </div>
+                    <h5>{{ player.name }}</h5>
+                    <h5>{{ player.firstname }}</h5>
+                </article>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock main %}
