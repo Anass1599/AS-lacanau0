@@ -1,0 +1,66 @@
+{# je utilise l'héritage de twig pour
+restituer le contenu du bloc parent (base.html.twig #}
+{% extends "Admin/base.html.twig" %}
+
+{% block metatitle %}{{ parent()}}Accueil{% endblock %}
+
+{% block main %}
+    <table>
+        <thead>
+        <tr>
+            <th colspan="100%"><h2>LISTE DES ARTICLES</h2></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <td><h3>{{ article.title }}</h3></td>
+                <td><button type="button" class="btn1">
+                        <a class="table-link" href="{{ path("admin_article_update",{"id" : article.id}) }}">MODIFIER</a>
+                    </button>
+                </td>
+                <td>
+                    <button type="button" class="btn1">
+                        <a class="table-link" href="{{ path("admin_article_delete",{"id" : article.id}) }}">Supprimer</a>
+                    </button>
+                </td>
+            </tr>
+        {% endfor%}
+        </tbody>
+        <tfoot>
+        <tr>
+            <th colspan="100%" style="text-align: right"><a class="lien" href="{{ path("admin_article_create") }}">AJOUTER UN ARTICLE ></a></th>
+        </tr>
+        </tfoot>
+    </table>
+
+    <table>
+        <thead>
+        <tr>
+            <th colspan="100%"><h2>LISTE DES PRODUITS</h2></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <td><h3>{{ article.title }}</h3></td>
+                <td><button type="button" class="btn1">
+                        <a class="table-link" href="{{ path("admin_article_update",{"id" : article.id}) }}">MODIFIER</a>
+                    </button>
+                </td>
+                <td>
+                    <button type="button" class="btn1">
+                        <a class="table-link" href="{{ path("admin_article_delete",{"id" : article.id}) }}">Supprimer</a>
+                    </button>
+                </td>
+            </tr>
+        {% endfor%}
+        </tbody>
+        <tfoot>
+        <tr>
+            <th colspan="100%" style="text-align: right"><a class="lien" href="{{ path("admin_article_create") }}">AJOUTER UN PRODUIT ></a></th>
+        </tr>
+        </tfoot>
+    </table>
+
+{% endblock main %}

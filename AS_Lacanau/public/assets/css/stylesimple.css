@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    height: 100px;
+    background: #0D6EFD;
+}
+
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 2rem;
+}
+
+.article {
+    width: 25%;
+    margin: 0 auto;
+    text-align: center;
+    background: #EEEEEE;
+}
+
+.navbar{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.navbar-nav{
+    display: flex;
+    align-items: center;
+}
+
+.nav-item{
+    list-style: none;
+}
+
+.nav-link{
+    text-decoration: none;
+    font-size: 1.3rem;
+    padding: 2rem;
+    color: whitesmoke;
+}
+
+footer{
+    height: 200px;
+    background: #0D6EFD;
+}
+
+.footer-link{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.form{
+    border-radius: 10px;
+    padding: 0.8rem;
+}
+
+.nav-logo{
+    width: 20vh;
+    height: 100%;
+}
+
+.logo {
+    height: 100%;
+    object-fit: cover;
+}
+
+.img {
+    width: 100%;
+    margin: 0 auto;
+    height: 200px;
+}
+.article_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lien {
+    font-size: 1.3rem;
+    color: #A9336B;
+    text-decoration: none;
+    margin: 2rem;
+}
+
+.form-style-9{
+    text-align: center;
+    max-width: 450px;
+    background: #FAFAFA;
+    padding: 30px;
+    margin: 50px auto;
+    box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    border: 6px solid #305A72;
+}
+
+.form-style-9 textarea{
+    height: 200px;
+}
+
+.form-style-9 textarea,
+.form-style-9 input,
+.form-style-9-input{
+    width: 100%;
+    border:3px solid #B0CFE0;
+    border-radius: 5px;
+    margin: 0.5rem 0rem;
+}
+
+table{
+    width: 80%;
+    text-align: center;
+    margin: 2rem auto;
+    border: 2px solid black;
+
+}
+
+td {
+    margin: 2rem;
+    padding: 1rem;
+}
+
+.table-link {
+    text-decoration: none;
+    color: black;
+}
+
+.fab {
+    color: rgba(255, 255, 255, 0.527);
+    font-size: 2rem;
+    margin-right: 2rem;
+}
+.fab:hover, .footer-link:hover {
+    color: #A9336B;
+}
+
+.btn {
+    margin: 10px;
+    padding: 0.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 1s;
+    background: #0D6EFD;
+    border: 2px solid white;
+    color: white;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: whitesmoke;
+    color: black;
+    text-decoration: none;
+}
+
+.btn1 {
+    margin: 5px;
+    padding: 0.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 1ms;
+    background: #0D6EFD;
+    border: 2px solid black;
+    color: white;
+    border-radius: 5px;
+}
+
+.btn1:hover {
+    background: whitesmoke;
+    color: black;
+    text-decoration: none;
+}
+

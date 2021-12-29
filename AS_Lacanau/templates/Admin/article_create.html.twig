@@ -1,0 +1,39 @@
+{# je utilise l'héritage de twig pour
+restituer le contenu du bloc parent (base.html.twig #}
+{% extends "Admin/base.html.twig" %}
+
+{% block metatitle %}{{ parent()}}Article{% endblock %}
+
+{% block stylesheet %}<link rel="stylesheet" href="{{ asset('assets/css/stylesimple.css') }}">{% endblock %}
+
+{% block main %}
+
+    {{ form_start(form) }}
+
+        <div class="form-style-9">
+            <h2>AJOUTER UN ARTICLE</h2>
+
+            {{ form_widget(form.title, {'attr': {'placeholder': 'Tapez le Titre du livre'}}) }}
+
+            {{ form_widget(form.text, {'attr': {'placeholder': 'Tapez votre texte'}}) }}
+
+            {{ form_label(form.coverFilenam, 'AFFICHE') }}
+            {{ form_widget(form.coverFilenam)}}
+
+            <div class="form">
+                {{ form_label(form.publishdAt, 'Date de parution') }}
+                {{ form_widget(form.publishdAt)}}
+            </div>
+
+            <div class="form">
+                {{ form_label(form.category, 'Catégorie ') }}
+                {{ form_widget(form.category)}}
+            </div>
+
+            {{ form_widget(form.VALIDER, {'attr': {'class': 'btn'}}) }}
+
+        </div>
+
+    {{ form_end(form) }}
+
+{% endblock main %}

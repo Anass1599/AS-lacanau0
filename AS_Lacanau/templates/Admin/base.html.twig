@@ -1,0 +1,79 @@
+<!--Dans un nouveau .html.twig, que je nomme base.html.twig, j'intègre mon header et mon footer
+Cela va me permettre de conserver le même header et le même footer dans chacune de mes pages,
+et donc d'éviter de les copier à chaque fois sur une page.
+Cette page est vulgairement mon gabarit.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--Dans le title de ma page base, j'appelle la fonction block metatitle qui va me permettre
+    d'afficher mon metatitle sur toutes les pages de mon site-->
+    <title>{% block metatitle %}AS LACANAU | {% endblock metatitle%}</title>
+    <!--J'utilise la balise link et la fonction asset pour rattacher ma feuille de style à mon html-->
+    <link rel="stylesheet" href="{{ asset('assets/css/stylesimple.css') }}">
+    <link href="{{ asset('assets/css/css/all.css') }}" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="{{ asset("assets/img/logo-as-png.png") }}" alt="" class="logo">
+        </div>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path("admin_home") }}">ACCUEIL</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">ARTICLES</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">BOUTIQUES</a>
+            </li>
+        </ul>
+        <form class="nav-form">
+            <input class="form" type="search" placeholder="Effectuez une recherche">
+            <button class="btn" type="submit">Rechercher</button>
+            <button class="btn" type="submit">SE CONNECTER</button>
+        </form>
+        <div class="nav-logo">
+            <img src="{{ asset("assets/img/logo-as-filles-png.png") }}" alt="" class="logo">
+        </div>
+    </nav>
+
+</header>
+
+<main>
+
+    {% block main %}{% endblock main %}
+
+</main>
+
+<footer>
+
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="{{ asset("assets/img/logo-as-png.png") }}" alt="" class="logo">
+        </div>
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="footer-link" href="">Mentions légales</a></li>
+            <li class="nav-item"><a class="footer-link"  href="">-Gestion des cookies</a></li>
+            <li class="nav-item"><a class="footer-link"  href="">-Ressources</a></li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href=""><i class="fab fa-facebook-square"></i></a></li>
+            <li class="nav-item"><a href=""><i class="fab fa-twitter-square"></i></a></li>
+            <li class="nav-item"><a href=""><i class="fab fa-linkedin"></i></a></li>
+            <li class="nav-item"><a href=""><i class="fab fa-instagram-square"></i></a></li>
+        </ul>
+        <div class="nav-logo">
+            <img src="{{ asset("assets/img/logo-as-filles-png.png") }}" alt="" class="logo">
+        </div>
+    </nav>
+
+</footer>
+
+</body>
+</html>

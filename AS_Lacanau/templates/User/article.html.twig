@@ -1,0 +1,18 @@
+{# je utilise l'héritage de twig pour
+restituer le contenu du bloc parent (base.html.twig #}
+{% extends "User/base.html.twig" %}
+
+{% block metatitle %}{{ parent()}}Accueil{% endblock %}
+
+{% block main %}
+
+    <section>
+        <h2>{{ article.title }}</h2>
+        <h5>{{ article.publishdAt|date("m/d/Y") }}</h5>
+            <div class="photo_img">
+                <img class="article_img" src="{{ asset('uploads/cover/'~article.coverFilenam)  }}">
+            </div>
+        <p>{{ article.text }}</p>
+    </section>
+
+{% endblock main %}

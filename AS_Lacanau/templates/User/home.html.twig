@@ -1,0 +1,41 @@
+{# je utilise l'héritage de twig pour
+restituer le contenu du bloc parent (base.html.twig #}
+{% extends "User/base.html.twig" %}
+
+{% block metatitle %}{{ parent()}}Accueil{% endblock %}
+
+{% block main %}
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ asset("assets/img/dimanche17.jpg") }}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset("assets/img/dimanche10.jpg") }}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ asset("assets/img/enzr.jpg") }}" class="d-block w-100" alt="...">
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <h2>DERNIÈRES ACTUALITÉS</h2>
+        <div class="articles">
+            {# avec la methode path je recupere les variables dens mon tableau apartir de mon homeContraller. #}
+            {% for article in articles %}
+                <article>
+                    <div class="img">
+                        <a href="{{ path('user_article', {'id' : article.id})}}"><img class="article_img" src="{{ asset('uploads/cover/'~article.coverFilenam)  }}"></a>
+                    </div>
+                    <h5>{{ article.title }}</h5>
+                    <h5>{{ article.publishdAt|date("m/d/Y") }}</h5>
+                </article>
+            {% endfor %}
+        </div>
+        <p class="lien">
+            <a class="lien" href="{{ path('user_articles') }}">TOUTES LES ACTUALITÉS ></a>
+        </p>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+{% endblock main %}
