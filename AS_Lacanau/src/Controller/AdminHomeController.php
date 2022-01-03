@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\ArticleRepository;
+use App\Repository\StoreRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -12,10 +13,12 @@ class AdminHomeController extends AbstractController
     /**
      * @Route("/admin/home", name="admin_home")
      */
-    public function adminHome(ArticleRepository $articleRepository)
+    public function adminHome(ArticleRepository $articleRepository, StoreRepository $storeRepository)
     {
         $articles = $articleRepository->findBy([],['id' => 'DESC'], 3);
-        return $this->render("Admin/home.html.twig", ["articles" => $articles]);
+        $stores = $storeRepository->findBy([],['id' => 'DESC'], 3);
+
+        return $this->render("Admin/home.html.twig", ["articles" => $articles, 'stores' => $stores]);
     }
 
     /**
@@ -30,9 +33,9 @@ class AdminHomeController extends AbstractController
     /**
      * @Route("/admin/boutique", name="admin_boutique")
      */
-    public function adminBoutique(ArticleRepository $articleRepository)
+    public function adminBoutique(StoreRepository $storeRepository)
     {
-        $articles = $articleRepository->findAll();
-        return $this->render("Admin/boutique.html.twig", ["articles" => $articles]);
+        $stores = $storeRepository->findAll();
+        return $this->render("Admin/boutique.html.twig", ["stores" => $stores]);
     }
 }

@@ -16,16 +16,16 @@ restituer le contenu du bloc parent (base.html.twig #}
         </tr>
         </thead>
         <tbody>
-        {% for article in articles %}
+        {% for store in stores %}
             <tr>
-                <td><h3>{{ article.title }}</h3></td>
+                <td><h3>{{ store.title }}</h3></td>
                 <td><button type="button" class="btn1">
-                        <a class="table-link" href="{{ path("admin_article_update",{"id" : article.id}) }}">MODIFIER</a>
+                        <a class="table-link" href="{{ path("admin_article_update",{"id" : store.id}) }}">MODIFIER</a>
                     </button>
                 </td>
                 <td>
                     <button type="button" class="btn1">
-                        <a class="table-link" href="{{ path("admin_article_delete",{"id" : article.id}) }}">Supprimer</a>
+                        <a class="table-link" href="{{ path("admin_article_delete",{"id" : store.id}) }}">Supprimer</a>
                     </button>
                 </td>
             </tr>

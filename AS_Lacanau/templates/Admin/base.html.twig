@@ -36,7 +36,9 @@ Cette page est vulgairement mon gabarit.-->
         <form class="nav-form">
             <input class="form" type="search" placeholder="Effectuez une recherche">
             <button class="btn" type="submit">Rechercher</button>
-            <button class="btn" type="submit">SE CONNECTER</button>
+            {% if app.user %}
+            <button class="btn" type="submit" ><a class="footer-link" href="{{ path('app_logout') }}">Déconnexion</a></button>
+            {% endif %}
         </form>
         <div class="nav-logo">
             <img src="{{ asset("assets/img/logo-as-filles-png.png") }}" alt="" class="logo">
@@ -47,6 +49,11 @@ Cette page est vulgairement mon gabarit.-->
 
 <main>
 
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
     {% block main %}{% endblock main %}
 
 </main>
