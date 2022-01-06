@@ -22,24 +22,7 @@ Cette page est vulgairement mon gabarit.-->
         <div class="nav-logo">
             <img src="{{ asset("assets/img/logo-as-png.png") }}" alt="" class="logo">
         </div>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path("admin_home") }}">ACCUEIL</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path("admin_articles") }}">ARTICLES</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path("admin_boutique") }}">BOUTIQUE</a>
-            </li>
-        </ul>
-        <form class="nav-form">
-            <input class="form" type="search" placeholder="Effectuez une recherche">
-            <button class="btn" type="submit">Rechercher</button>
-            {% if app.user %}
-            <button class="btn"><a class="footer-link" href="{{ path('app_logout') }}">Déconnexion</a></button>
-            {% endif %}
-        </form>
+        <h1>AS LACANAU</h1>
         <div class="nav-logo">
             <img src="{{ asset("assets/img/logo-as-filles-png.png") }}" alt="" class="logo">
         </div>

@@ -1,0 +1,27 @@
+{# je utilise l'héritage de twig pour
+restituer le contenu du bloc parent (base.html.twig #}
+{% extends "User/base.html.twig" %}
+
+{% block metatitle %}{{ parent()}}Résultats{% endblock %}
+
+{% block main %}
+
+    <section>
+        <div class="calendrier">
+            <div class="calendrier__head">
+                <div class="calendrier__head__info">
+                    <span class="calendrier__head__info__date">09/01/2022</span>
+                </div>
+            </div>
+            <div class="calendrier__info">
+                <img src="https://api-agregateur.ffr.fr/assets/embleme/club/1025.jpg" class="default ">
+                <div class="calendrier__info__teams">
+                    <span class="calendrier__info__team">AS Lacanau</span>
+                    <span class="calendrier__info__vs"><strong>16-13</strong></span>
+                    <span class="calendrier__info__team">SC St Pierre Du Mont</span>
+                </div>
+                <img src="https://api-agregateur.ffr.fr/assets/embleme/club/1320.jpg" class="default">
+            </div>
+        </div>
+    </section>
+{% endblock main %}

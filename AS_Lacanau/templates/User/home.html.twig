@@ -37,5 +37,91 @@ restituer le contenu du bloc parent (base.html.twig #}
             <a class="lien" href="{{ path('user_articles') }}">TOUTES LES ACTUALITÉS ></a>
         </p>
     </section>
+    <section>
+        <h2>CALENDRIER & CLASSEMENT</h2>
+        <div class="results">
+            <div class="box">
+                <div class="header"><span class="subtitle-classement">Classement</span></div>
+                <ul class="container-list">
+                    <li class="container-li">
+                        <span class="numero-classement"> 5. </span>
+                        <img src="https://api-agregateur.ffr.fr/assets/embleme/club/1530.jpg" alt="SC St Pierre Du Mont"
+                             class="default ">
+                        <div class="first-place">
+                            <span class="nom-club">Ychoux Ol</span>
+                        </div>
+                        <div class="nombre-points">
+                            <span>27</span>
+                            <span>Pts</span>
+                        </div>
+                    </li>
+                    <li class="container-li">
+                        <span class="numero-classement"> 6. </span>
+                        <img src="https://api-agregateur.ffr.fr/assets/embleme/club/1025.jpg" alt="SC St Pierre Du Mont"
+                             class="default ">
+                        <div class="first-place">
+                            <span class="nom-club">AS Lacanau</span>
+                        </div>
+                        <div class="nombre-points">
+                            <span>18</span>
+                            <span>Pts</span>
+                        </div>
+                    </li>
+                    <li class="container-li">
+                        <span class="numero-classement"> 7. </span>
+                        <img src="https://api-agregateur.ffr.fr/assets/embleme/club/395.jpg" alt="US Galgonaise Rugby"
+                             class="default ">
+                        <div class="first-place">
+                            <span class="nom-club">US Galgonaise Rugby</span>
+                        </div>
+                        <div class="nombre-points">
+                            <span>15</span>
+                            <span>Pts</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="box">
+                <div class="info">
+                    <div class="calendrier">
+                        <div class="calendrier__head">
+                            <div class="calendrier__head__title">PROCHAIN MATCH</div>
+                            <div class="calendrier__head__info">
+                                <span class="calendrier__head__info__place">Stade De L'Ardilouse | </span>
+                                <span class="calendrier__head__info__date"><span>09/01/2022</span> - 15:00 </span>
+                            </div>
+                        </div>
+                        <div class="calendrier__info">
+                            <img src="https://api-agregateur.ffr.fr/assets/embleme/club/1025.jpg" class="default ">
+                            <div class="calendrier__info__teams">
+                                <span class="calendrier__info__team">AS Lacanau </span>
+                                <span class="calendrier__info__vs"><strong>VS</strong></span>
+                                <span class="calendrier__info__team">SC St Pierre Du Mont</span>
+                            </div>
+                            <img src="https://api-agregateur.ffr.fr/assets/embleme/club/1320.jpg" class="default">
+                        </div>
+                    </div>
+                    <div class="calendrier">
+                        <div class="calendrier__head">
+                            <div class="calendrier__head__title">DERNIER MATCH</div>
+                            <div class="calendrier__head__info">
+                                <span class="calendrier__head__info__place">Stade De L'Ardilouse | </span>
+                                <span class="calendrier__head__info__date"><span>09/01/2022</span> - 15:00 </span>
+                            </div>
+                        </div>
+                        <div class="calendrier__info">
+                            <img src="https://api-agregateur.ffr.fr/assets/embleme/club/1025.jpg" class="default ">
+                            <div class="calendrier__info__teams">
+                                <span class="calendrier__info__team">AS Lacanau</span>
+                                <span class="calendrier__info__vs"><strong>16-13</strong></span>
+                                <span class="calendrier__info__team">SC St Pierre Du Mont</span>
+                            </div>
+                            <img src="https://api-agregateur.ffr.fr/assets/embleme/club/1320.jpg" class="default">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 {% endblock main %}

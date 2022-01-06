@@ -1,0 +1,111 @@
+{# je utilise l'héritage de twig pour
+restituer le contenu du bloc parent (base.html.twig #}
+{% extends "User/base.html.twig" %}
+
+{% block metatitle %}{{ parent()}}Classement{% endblock %}
+
+{% block main %}
+
+    <section>
+        <h2>3ÈME / 4ÈME SÉRIE - CHAMPIONNAT TERRITORIAL</h2>
+        <table>
+            <tbody class="classement-table">
+            <tr class="tr">
+                <th><span class="header-title">Classement</span></th>
+                <th class="can-sort desktop-only"><span><abbr title="Points">Pts</abbr></span>
+                <th class="sort-active"><span><abbr title="Joués">J</abbr> </span></th>
+                <th class="can-sort"><span><abbr title="Gagnés">G</abbr></span></th>
+                <th class="can-sort"><span><abbr title="Nuls">N</abbr></span></th>
+                <th class="can-sort"><span><abbr title="Perdus">P</abbr></span></th>
+                </th>
+            <tr class="tr">
+                <td><span class="numero-classement">1</span><img src="https://api-agregateur.ffr.fr/assets/embleme/club/1521.jpg" alt="Sanguinet AC" class="default "><span  class="px-3">Sanguinet AC</span></td>
+                <td class="desktop-only"><span>40 </span> </td>
+                <td class="is-sorted"><span>9 </span> </td>
+                <td class=""><span>8 </span> </td>
+                <td class=""><span>0 </span> </td>
+                <td class=""><span>1 </span> </td>
+            </tr>
+            <tr class="tr">
+                <td><span class="numero-classement">2</span><img src="https://api-agregateur.ffr.fr/assets/embleme/club/1320.jpg" alt="SC St Pierre Du Mont" class="default"><span class="px-3">SC St Pierre Du Mont</span></td>
+                <td class="desktop-only"><span>34 </span> </td>
+                <td class="is-sorted"><span>9 </span> </td>
+                <td class=""><span>7 </span> </td>
+                <td class=""><span>0 </span> </td>
+                <td class=""><span>2 </span> </td>
+            </tr>
+            <tr class="tr">
+                <td><span class="numero-classement">3</span><img src="https://api-agregateur.ffr.fr/assets/embleme/club/1016.jpg" alt="AS Narrossaise" class="default "><span class="px-3">AS Narrossaise</span></td>
+                <td class="desktop-only"><span>33 </span> </td>
+                <td class=""><span>9 </span> </td>
+                <td class=""><span>7 </span> </td>
+                <td class=""><span>0 </span> </td>
+                <td class=""><span>2 </span> </td>
+            </tr>
+
+            <tr class="tr">
+                <td><span class="numero-classement">4</span><img src="https://api-agregateur.ffr.fr/assets/embleme/club/1522.jpg" alt="RC St Eulalie En Born" class="default "><span class="px-3">RC St Eulalie En Born</span></td>
+                <td class="desktop-only"><span>27 </span> </td>
+                <td class=""><span>9 </span> </td>
+                <td class=""><span>6 </span> </td>
+                <td class=""><span>0 </span> </td>
+                <td class=""><span>3 </span> </td>
+            </tr>
+
+            <tr class="tr">
+                <td><span class="numero-classement">4</span><img src="https://api-agregateur.ffr.fr/assets/embleme/club/1530.jpg" alt="Ychoux Ol" class="default "><span class="px-3">Ychoux Ol</span></td>
+                <td class="desktop-only"><span>27 </span> </td>
+                <td class=""><span>9 </span> </td>
+                <td class=""><span>6 </span> </td>
+                <td class=""><span>0 </span> </td>
+                <td class=""><span>3 </span> </td>
+            </tr>
+
+            <tr class="tr">
+                <td><span class="numero-classement">6</span><img src="https://api-agregateur.ffr.fr/assets/embleme/club/1025.jpg" alt="AS Lacanau" class="default "><span class="px-3">AS Lacanau</span></td>
+                <td class="desktop-only"><span>18 </span> </td>
+                <td class=""><span>9 </span> </td>
+                <td class=""><span>4 </span> </td>
+                <td class=""><span>0 </span> </td>
+                <td class=""><span>5 </span> </td>
+            </tr>
+
+            <tr class="tr">
+                <td><span class="numero-classement">7</span><img src="https://api-agregateur.ffr.fr/assets/embleme/club/395.jpg" alt="US Galgonaise Rugby" class="default "><span class="px-3">US Galgonaise Rugby</span></td>
+                <td class="desktop-only"><span>15 </span> </td>
+                <td class=""><span>9 </span> </td>
+                <td class=""><span>3 </span> </td>
+                <td class=""><span>0 </span> </td>
+                <td class=""><span>6 </span> </td>
+            </tr>
+
+            <tr class="tr">
+                <td><span class="numero-classement">8</span><img src="https://api-agregateur.ffr.fr/assets/embleme/club/1516.jpg" alt="AS Cult Pessac Alouette" class="default "><span class="px-3">AS Cult Pessac Alouette</span></td>
+                <td class="desktop-only"><span>12 </span> </td>
+                <td class=""><span>9 </span> </td>
+                <td class=""><span>3 </span> </td>
+                <td class=""><span>0 </span> </td>
+                <td class=""><span>6 </span> </td>
+            </tr>
+
+            <tr class="tr">
+                <td><span class="numero-classement">9</span><img src="https://api-agregateur.ffr.fr/assets/embleme/club/1435.jpg" alt="U ACadillacaise" class="default "><span class="px-3">U ACadillacaise</span></td>
+                <td class="desktop-only"><span>7 </span> </td>
+                <td class=""><span>9 </span> </td>
+                <td class=""><span>1 </span> </td>
+                <td class=""><span>0 </span> </td>
+                <td class=""><span>8 </span> </td>
+            </tr>
+
+            <tr class="tr">
+                <td><span class="numero-classement">10</span><img src="https://api-agregateur.ffr.fr/assets/embleme/club/1515.jpg" alt="Pessac Rugby" class="default "><span class="px-3">Pessac Rugby</span></td>
+                <td class="desktop-only"><span>0 </span> </td>
+                <td class=""><span>9 </span> </td>
+                <td class=""><span>0 </span> </td>
+                <td class=""><span>0 </span> </td>
+                <td class=""><span>9 </span> </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+{% endblock main %}

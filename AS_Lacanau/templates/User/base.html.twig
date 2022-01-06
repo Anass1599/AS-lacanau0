@@ -50,8 +50,8 @@ Cette page est vulgairement mon gabarit.-->
                         <ul class="nav-item1">
                             <li class="header-item"><a class="nav-link" href="{{ path('user_seniors') }}">Séniors</a></li>
                             <li class="header-item"><a class="nav-link" href="">Feminines</a></li>
-                            <li class="header-item"><a class="nav-link" href="">Résultats</a></li>
-                            <li class="header-item"><a class="nav-link" href="">Classement</a></li>
+                            <li class="header-item"><a class="nav-link" href="{{ path('user_resultats') }}">Résultats</a></li>
+                            <li class="header-item"><a class="nav-link" href="{{ path('user_classement') }}">Classement</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -59,7 +59,11 @@ Cette page est vulgairement mon gabarit.-->
                     <input class="form-control me-2" type="text" placeholder="Effectuez une recherche"
                            aria-label="Search" name="search">
                     <button class="btn btn-outline-light me-2" type="submit">Rechercher</button>
-                    <button class="btn btn-outline-light me-2 col-4 " type="submit">SE CONNECTER</button>
+                    {% if app.user %}
+                        <button class="btn btn-outline-light me-2 col-4 "  ><a class="footer-link" href="{{ path('app_logout') }}">Déconnexion</a></button>
+                    {% else %}
+                        <button class="btn btn-outline-light me-2 col-4 " ><a class="footer-link" href="{{ path('login') }}">SE CONNECTER</a></button>
+                    {% endif %}
                 </form>
             </div>
             <a class="navbar-brand" href="#">

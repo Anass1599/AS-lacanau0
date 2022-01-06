@@ -69,4 +69,20 @@ class HomeUserController extends AbstractController
         return $this->render("User/articles_search.html.twig", ['articles' => $articles]);
 
     }
+
+    /**
+     * @Route("/user/classement", name="user_classement")
+     */
+    public function classement()
+    {
+        return $this->render("User/classement.html.twig");
+    }
+
+    /**
+     * @Route("/user/resultats", name="user_resultats")
+     */
+    public function resultats()
+    {
+        return $this->render("User/resultats.html.twig");
+    }
 }
