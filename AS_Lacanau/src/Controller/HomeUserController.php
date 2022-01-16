@@ -2,10 +2,13 @@
 
 namespace App\Controller;
 
+use App\Form\ContactType;
 use App\Repository\ArticleRepository;
 use App\Repository\PlayersRepository;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class HomeUserController extends AbstractController
@@ -84,5 +87,46 @@ class HomeUserController extends AbstractController
     public function resultats()
     {
         return $this->render("User/resultats.html.twig");
+    }
+
+    /**
+     * @Route("/user/calendrier", name="user_calendrier")
+     */
+    public function calendrier()
+    {
+        return $this->render("User/calendrier.html.twig");
+    }
+
+    /**
+     * @Route("/user/contact", name="user_contact")
+     */
+    public function contact(Request $request, MailerInterface $mailer)
+    {
+        $nom = 'anassmoujahid@hotmail.fr';
+        $form = $this->createForm(ContactType::class);
+        $contact = $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $email = (new TemplatedEmail())
+                ->from($contact->get('email')->getData())
+                ->to($nom)
+                ->subject($contact->get('subject')->getData())
+                ->htmlTemplate('User/mail.html.twig')
+                ->context([
+                    'objet' => $contact->get('subject')->getData(),
+                    'mail' => $contact->get('email')->getData(),
+                    'nom' => $contact->get('nom')->getData(),
+                    'message' => $contact->get('message')->getData(),
+                ]);
+
+            $mailer->send($email);
+
+            $this->addFlash('message', 'votre email a bien été envoyé ');
+            return $this->redirectToRoute('user_home');
+
+        }
+
+        return $this->render("User/contact.html.twig", ['form' => $form->createView()]);
+
     }
 }

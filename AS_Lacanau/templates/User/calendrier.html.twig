@@ -2,21 +2,25 @@
 restituer le contenu du bloc parent (base.html.twig #}
 {% extends "User/base.html.twig" %}
 
-{% block metatitle %}{{ parent()}}Résultats{% endblock %}
+{% block metatitle %}{{ parent()}}Calendrier{% endblock %}
 
 {% block main %}
 
     <section>
         <div class="calendrier">
-            <div class="calendrier__head">
-                <span class="calendrier__head__info__date">JOURNÉE 9</span>
-                <span class="calendrier__head__info__date">09/01/2022</span>
-            </div>
+            <header class="calendrier-header">
+                <div class="date">
+                    <span class="jour">09</span>
+                    <span>Janv</span>
+                </div>
+                <h4 class="division-name">3ème / 4ème Série  - Championnat Territorial</h4>
+                <span class="sous-titre">Journée 10</span>
+            </header>
             <div class="calendrier__info">
                 <span class="calendrier__info__team">AS Lacanau</span>
                 <div class="calendrier__info__teams">
                     <img src="https://api-agregateur.ffr.fr/assets/embleme/club/1025.jpg" class="default ">
-                    <span class="calendrier__info__vs"><strong>19-16</strong></span>
+                    <span class="calendrier__info__vs"><strong>VS</strong></span>
                     <img src="https://api-agregateur.ffr.fr/assets/embleme/club/1320.jpg" class="default">
                 </div>
                 <span class="calendrier__info__team">SC St Pierre Du Mont</span>
@@ -24,15 +28,19 @@ restituer le contenu du bloc parent (base.html.twig #}
         </div>
 
         <div class="calendrier">
-            <div class="calendrier__head">
-                <span class="calendrier__head__info__date">JOURNÉE 8</span>
-                <span class="calendrier__head__info__date">09/01/2022</span>
-            </div>
+            <header class="calendrier-header">
+                <div class="date">
+                    <span class="jour">16</span>
+                    <span>Janv</span>
+                </div>
+                <h4 class="division-name">3ème / 4ème Série  - Championnat Territorial</h4>
+                <span class="sous-titre">Journée 11</span>
+            </header>
             <div class="calendrier__info">
                 <span class="calendrier__info__team">AS Lacanau</span>
                 <div class="calendrier__info__teams">
                     <img src="https://api-agregateur.ffr.fr/assets/embleme/club/1025.jpg" class="default ">
-                    <span class="calendrier__info__vs"><strong>07-42</strong></span>
+                    <span class="calendrier__info__vs"><strong>VS</strong></span>
                     <img src="https://api-agregateur.ffr.fr/assets/embleme/club/1320.jpg" class="default">
                 </div>
                 <span class="calendrier__info__team">SC St Pierre Du Mont</span>
@@ -40,15 +48,19 @@ restituer le contenu du bloc parent (base.html.twig #}
         </div>
 
         <div class="calendrier">
-            <div class="calendrier__head">
-                <span class="calendrier__head__info__date">JOURNÉE 7</span>
-                <span class="calendrier__head__info__date">09/01/2022</span>
-            </div>
+            <header class="calendrier-header">
+                <div class="date">
+                    <span class="jour">30</span>
+                    <span>Janv</span>
+                </div>
+                <h4 class="division-name">3ème / 4ème Série  - Championnat Territorial</h4>
+                <span class="sous-titre">Journée 12</span>
+            </header>
             <div class="calendrier__info">
                 <span class="calendrier__info__team">AS Lacanau</span>
                 <div class="calendrier__info__teams">
                     <img src="https://api-agregateur.ffr.fr/assets/embleme/club/1025.jpg" class="default ">
-                    <span class="calendrier__info__vs"><strong>18-28</strong></span>
+                    <span class="calendrier__info__vs"><strong>VS</strong></span>
                     <img src="https://api-agregateur.ffr.fr/assets/embleme/club/1320.jpg" class="default">
                 </div>
                 <span class="calendrier__info__team">SC St Pierre Du Mont</span>
@@ -56,15 +68,19 @@ restituer le contenu du bloc parent (base.html.twig #}
         </div>
 
         <div class="calendrier">
-            <div class="calendrier__head">
-                <span class="calendrier__head__info__date">JOURNÉE 6</span>
-                <span class="calendrier__head__info__date">09/01/2022</span>
-            </div>
+            <header class="calendrier-header">
+                <div class="date">
+                    <span class="jour">06</span>
+                    <span>Fevr</span>
+                </div>
+                <h4 class="division-name">3ème / 4ème Série  - Championnat Territorial</h4>
+                <span class="sous-titre">Journée 13</span>
+            </header>
             <div class="calendrier__info">
                 <span class="calendrier__info__team">AS Lacanau</span>
                 <div class="calendrier__info__teams">
                     <img src="https://api-agregateur.ffr.fr/assets/embleme/club/1025.jpg" class="default ">
-                    <span class="calendrier__info__vs"><strong>8-0</strong></span>
+                    <span class="calendrier__info__vs"><strong>VS</strong></span>
                     <img src="https://api-agregateur.ffr.fr/assets/embleme/club/1320.jpg" class="default">
                 </div>
                 <span class="calendrier__info__team">SC St Pierre Du Mont</span>
@@ -72,15 +88,19 @@ restituer le contenu du bloc parent (base.html.twig #}
         </div>
 
         <div class="calendrier">
-            <div class="calendrier__head">
-                <span class="calendrier__head__info__date">JOURNÉE 5</span>
-                <span class="calendrier__head__info__date">09/01/2022</span>
-            </div>
+            <header class="calendrier-header">
+                <div class="date">
+                    <span class="jour">20</span>
+                    <span>Fevr</span>
+                </div>
+                <h4 class="division-name">3ème / 4ème Série  - Championnat Territorial</h4>
+                <span class="sous-titre">Journée 14</span>
+            </header>
             <div class="calendrier__info">
                 <span class="calendrier__info__team">AS Lacanau</span>
                 <div class="calendrier__info__teams">
                     <img src="https://api-agregateur.ffr.fr/assets/embleme/club/1025.jpg" class="default ">
-                    <span class="calendrier__info__vs"><strong>09-23</strong></span>
+                    <span class="calendrier__info__vs"><strong>VS</strong></span>
                     <img src="https://api-agregateur.ffr.fr/assets/embleme/club/1320.jpg" class="default">
                 </div>
                 <span class="calendrier__info__team">SC St Pierre Du Mont</span>
@@ -88,15 +108,19 @@ restituer le contenu du bloc parent (base.html.twig #}
         </div>
 
         <div class="calendrier">
-            <div class="calendrier__head">
-                <span class="calendrier__head__info__date">JOURNÉE 4</span>
-                <span class="calendrier__head__info__date">09/01/2022</span>
-            </div>
+            <header class="calendrier-header">
+                <div class="date">
+                    <span class="jour">06</span>
+                    <span>Mars</span>
+                </div>
+                <h4 class="division-name">3ème / 4ème Série  - Championnat Territorial</h4>
+                <span class="sous-titre">Journée 15</span>
+            </header>
             <div class="calendrier__info">
                 <span class="calendrier__info__team">AS Lacanau</span>
                 <div class="calendrier__info__teams">
                     <img src="https://api-agregateur.ffr.fr/assets/embleme/club/1025.jpg" class="default ">
-                    <span class="calendrier__info__vs"><strong>00-47</strong></span>
+                    <span class="calendrier__info__vs"><strong>VS</strong></span>
                     <img src="https://api-agregateur.ffr.fr/assets/embleme/club/1320.jpg" class="default">
                 </div>
                 <span class="calendrier__info__team">SC St Pierre Du Mont</span>
@@ -104,15 +128,19 @@ restituer le contenu du bloc parent (base.html.twig #}
         </div>
 
         <div class="calendrier">
-            <div class="calendrier__head">
-                <span class="calendrier__head__info__date">JOURNÉE 3</span>
-                <span class="calendrier__head__info__date">09/01/2022</span>
-            </div>
+            <header class="calendrier-header">
+                <div class="date">
+                    <span class="jour">13</span>
+                    <span>Mars</span>
+                </div>
+                <h4 class="division-name">3ème / 4ème Série  - Championnat Territorial</h4>
+                <span class="sous-titre">Journée 16</span>
+            </header>
             <div class="calendrier__info">
                 <span class="calendrier__info__team">AS Lacanau</span>
                 <div class="calendrier__info__teams">
                     <img src="https://api-agregateur.ffr.fr/assets/embleme/club/1025.jpg" class="default ">
-                    <span class="calendrier__info__vs"><strong>17-26</strong></span>
+                    <span class="calendrier__info__vs"><strong>VS</strong></span>
                     <img src="https://api-agregateur.ffr.fr/assets/embleme/club/1320.jpg" class="default">
                 </div>
                 <span class="calendrier__info__team">SC St Pierre Du Mont</span>
@@ -120,15 +148,19 @@ restituer le contenu du bloc parent (base.html.twig #}
         </div>
 
         <div class="calendrier">
-            <div class="calendrier__head">
-                <span class="calendrier__head__info__date">JOURNÉE 2</span>
-                <span class="calendrier__head__info__date">09/01/2022</span>
-            </div>
+            <header class="calendrier-header">
+                <div class="date">
+                    <span class="jour">27</span>
+                    <span>Mars</span>
+                </div>
+                <h4 class="division-name">3ème / 4ème Série  - Championnat Territorial</h4>
+                <span class="sous-titre">Journée 17</span>
+            </header>
             <div class="calendrier__info">
                 <span class="calendrier__info__team">AS Lacanau</span>
                 <div class="calendrier__info__teams">
                     <img src="https://api-agregateur.ffr.fr/assets/embleme/club/1025.jpg" class="default ">
-                    <span class="calendrier__info__vs"><strong>12-29</strong></span>
+                    <span class="calendrier__info__vs"><strong>VS</strong></span>
                     <img src="https://api-agregateur.ffr.fr/assets/embleme/club/1320.jpg" class="default">
                 </div>
                 <span class="calendrier__info__team">SC St Pierre Du Mont</span>
@@ -136,15 +168,19 @@ restituer le contenu du bloc parent (base.html.twig #}
         </div>
 
         <div class="calendrier">
-            <div class="calendrier__head">
-                <span class="calendrier__head__info__date">JOURNÉE 1</span>
-                <span class="calendrier__head__info__date">09/01/2022</span>
-            </div>
+            <header class="calendrier-header">
+                <div class="date">
+                    <span class="jour">10</span>
+                    <span>Avr</span>
+                </div>
+                <h4 class="division-name">3ème / 4ème Série  - Championnat Territorial</h4>
+                <span class="sous-titre">Journée 18</span>
+            </header>
             <div class="calendrier__info">
                 <span class="calendrier__info__team">AS Lacanau</span>
                 <div class="calendrier__info__teams">
                     <img src="https://api-agregateur.ffr.fr/assets/embleme/club/1025.jpg" class="default ">
-                    <span class="calendrier__info__vs"><strong>25-03</strong></span>
+                    <span class="calendrier__info__vs"><strong>VS</strong></span>
                     <img src="https://api-agregateur.ffr.fr/assets/embleme/club/1320.jpg" class="default">
                 </div>
                 <span class="calendrier__info__team">SC St Pierre Du Mont</span>

@@ -15,7 +15,7 @@ class AdminStoreController extends AbstractController
 
 
     /**
-     * @Route("/admin/article/create", name="admin_article_create")
+     * @Route("/admin/store/create", name="admin_store_create")
      */
     //je crées une fonction pour enregistrer un nouveau article.
     //je demande à symfony de instancier un objet de la classe Request,

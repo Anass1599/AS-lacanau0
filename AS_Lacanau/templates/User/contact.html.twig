@@ -1,0 +1,18 @@
+{% extends "User/base.html.twig" %}
+
+{% block metatitle %}{{ parent()}}CONTACT{% endblock %}
+
+{% block stylesheet %}<link rel="stylesheet" href="{{ asset('assets/css/stylesimple.css') }}">{% endblock %}
+
+{% block main %}
+
+   <section>
+       <div class="form-style-9">
+           <h2>FORMULAIRE DE CONTACT</h2>
+           {{ form_start(form) }}
+
+           {{ form_end(form) }}
+       </div>
+   </section>
+
+{% endblock main %}
