@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Form\AdminType;
 use App\Form\UserType;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -44,6 +45,49 @@ class LoginController extends AbstractController
     UserRepository $userRepository)
     {
         $user = new User();
+        $form = $this->createForm(AdminType::class, $user);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $mail = $user->getEmail();
+            $email = $userRepository->findOneBy(array('email' => $mail));
+            if (is_null($email)) {
+                $user->setRoles(["ROLE_USER"]);
+                //  je vais chercher les informations de password et plus precisement les données
+                $plaintextPassword = $form->get('password')->getData();
+                $hashedPassword = $passwordHasher->hashPassword(
+                    $user,
+                    $plaintextPassword
+                );
+                $user->setPassword($hashedPassword);
+
+                // cette classe permet de préparer sa sauvegarde en bdd
+                $entityManager->persist($user);
+
+                // cette classe permet de génèrer et éxecuter la requête SQL
+                $entityManager->flush();
+                $this->addFlash('success', "Vos informations ont bien été enregistré!");
+                return $this->redirectToRoute('admin_home');
+            }
+            else {
+                $this->addFlash('success', "ERREUR");
+            }
+
+
+        }
+
+
+        return $this->render("Admin/user.create.html.twig", ['form' => $form->createView()]);
+    }
+
+    /**
+     * @Route("/user/create", name="user_create")
+     */
+    public function createUseruser(Request $request, EntityManagerInterface $entityManager, UserPasswordHasherInterface $passwordHasher,
+                               UserRepository $userRepository)
+    {
+        $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
@@ -67,6 +111,7 @@ class LoginController extends AbstractController
                 // cette classe permet de génèrer et éxecuter la requête SQL
                 $entityManager->flush();
                 $this->addFlash('success', "Vos informations ont bien été enregistré!");
+                return $this->redirectToRoute('user_home');
             }
             else {
                 $this->addFlash('success', "ERREUR");
@@ -76,8 +121,25 @@ class LoginController extends AbstractController
         }
 
 
-        return $this->render("Admin/user.create.html.twig", ['form' => $form->createView()]);
+        return $this->render("User/user.create.html.twig", ['form' => $form->createView()]);
     }
 
+    /**
+     * je crée une page racine qui porte le nom "redirect"
+     * @Route("/redirect", name="redirect")
+     */
+
+    public function redirectRole()
+    {
+
+        if ($this->isGranted('ROLE_ADMIN')) {
+            return $this->redirectToRoute('admin_home');
+        } elseif ($this->isGranted('ROLE_USER')) {
+            return $this->redirectToRoute('user_home');
+        } else {
+            return $this->redirectToRoute('login');
+        }
+
+    }
 
 }

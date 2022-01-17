@@ -1,0 +1,26 @@
+{% extends "Admin/base.html.twig" %}
+
+{% block metatitle %}{{ parent()}}AJOUTER UN UTILISATEUR{% endblock %}
+
+{% block stylesheet %}<link rel="stylesheet" href="{{ asset('assets/css/stylesimple.css') }}">{% endblock %}
+
+{% block main %}
+
+    <div class="form-style-9">
+        <h2>AJOUTER UN UTILISATEUR</h2>
+
+        {{ form_start(form) }}
+
+        {{ form_label(form.email, 'Email') }}
+        {{ form_widget(form.email, {'attr': {'placeholder': 'Tapez le Titre du livre'}}) }}
+
+        {{ form_label(form.password, 'Password') }}
+        {{ form_widget(form.password, {'attr': {'placeholder': 'Tapez votre texte'}}) }}
+
+        {{ form_widget(form.VALIDER, {'attr': {'class': 'btn'}}) }}
+
+        {{ form_end(form) }}
+    </div>
+
+
+{% endblock main %}
